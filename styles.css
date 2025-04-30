@@ -1,0 +1,595 @@
+/* Base Styles */
+:root {
+    --primary-color: #2A4365;
+    --accent-color: #3182CE;
+    --text-dark: #2D3748;
+    --text-light: #FFFFFF;
+    --section-padding: 4rem 0;
+}
+
+.sidebar {
+    position: fixed;
+    right: -250px; /* Скрываем за пределами экрана */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.sidebar-nav .cta {
+    background: #3182CE;
+    color: white !important;
+    margin-top: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; 
+    }
+}
+
+
+/* Общие стили секций */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* О школе */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.sports-list {
+    list-style: none;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+.sports-list li {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: var(--light-bg);
+    border-radius: 5px;
+}
+
+.age-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Стили для галереи */
+.gallery-section {
+    padding: 40px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Магазин */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+}
+
+/* Соревнования */
+.events-timeline {
+    display: grid;
+    gap: 2rem;
+}
+
+.event-card {
+    background: white;
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+/* Стили для секций */
+.section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Анимация появления */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #3182CE;
+    border-bottom: 2px solid #3182CE;
+}
+
+/* Адаптивное меню */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem;
+    }
+}
+
+/* Стили для кнопки */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #3182CE;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--text-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('hero-bg.jpg') center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.cta-button {
+    background: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* About Section */
+.about-section {
+    padding: var(--section-padding);
+    background: #F7FAFC;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+/* News Section */
+.news-section {
+    padding: var(--section-padding);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.all-news {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-date {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+/* Стили для галереи */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}/* Анимация загрузки */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.loading-indicator {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3182CE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+profile-notification {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.notification-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.notification-btn:hover {
+    transform: scale(1.1);
+}
+
+.profile {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.profile:hover .profile-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.profile-menu a:hover {
+    background: var(--light-bg);
+    border-radius: 4px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .profile-notification {
+        gap: 1rem;
+    }
+    
+    .notification-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
