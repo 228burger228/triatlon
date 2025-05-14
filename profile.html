@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль | Спортивная школа триатлона</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="news.html">Новости</a>
+                <a href="coaches.html">Тренеры</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="shop.html">Магазин</a>
+                <a href="profile.html" class="active">Профиль</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <img src="images/avatars/default.jpg" alt="Аватар" id="user-avatar">
+                    <button class="change-avatar-btn">Изменить</button>
+                </div>
+                <h2 id="username-display">Гость</h2>
+                <p class="member-since">Участник с: <span id="join-date">-</span></p>
+                
+                <nav class="profile-menu">
+                    <a href="#personal" class="active"><i class="fas fa-user"></i> Личные данные</a>
+                    <a href="#training"><i class="fas fa-dumbbell"></i> Тренировки</a>
+                    <a href="#achievements"><i class="fas fa-trophy"></i> Достижения</a>
+                    <a href="#settings"><i class="fas fa-cog"></i> Настройки</a>
+                    <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <!-- Блок авторизации/регистрации -->
+            <div class="auth-section" id="auth-section">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Вход</button>
+                    <button class="auth-tab" data-tab="register">Регистрация</button>
+                </div>
+
+                <!-- Форма входа -->
+                <form class="auth-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Пароль</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </form>
+
+                <!-- Форма регистрации -->
+                <form class="auth-form" id="register-form">
+                    <div class="form-group">
+                        <label for="reg-username">Имя пользователя</label>
+                        <input type="text" id="reg-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Пароль</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm">Подтвердите пароль</label>
+                        <input type="password" id="reg-confirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-birthdate">Дата рождения</label>
+                        <input type="date" id="reg-birthdate">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+
+            <!-- Личный кабинет (показывается после авторизации) -->
+            <div class="profile-dashboard" id="profile-dashboard" style="display: none;">
+                <!-- Личные данные -->
+                <section class="profile-section active" id="personal-section">
+                    <h2><i class="fas fa-user"></i> Личные данные</h2>
+                    <form id="personal-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">Имя</label>
+                                <input type="text" id="first-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Фамилия</label>
+                                <input type="text" id="last-name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email">Email</label>
+                            <input type="email" id="user-email" disabled>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="birth-date">Дата рождения</label>
+                                <input type="date" id="birth-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Пол</label>
+                                <select id="gender">
+                                    <option value="male">Мужской</option>
+                                    <option value="female">Женский</option>
+                                    <option value="other">Другой</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                    </form>
+                </section>
+
+                <!-- Тренировки -->
+                <section class="profile-section" id="training-section">
+                    <h2><i class="fas fa-dumbbell"></i> Мои тренировки</h2>
+                    <div class="training-stats">
+                        <div class="stat-card">
+                            <h3>Последняя тренировка</h3>
+                            <p class="stat-value">5 дней назад</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Всего тренировок</h3>
+                            <p class="stat-value">24</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Средняя нагрузка</h3>
+                            <p class="stat-value">7.2/10</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-sessions">
+                        <h3>Ближайшие занятия</h3>
+                        <div class="session-card">
+                            <div class="session-date">
+                                <span class="day">15</span>
+                                <span class="month">Июн</span>
+                            </div>
+                            <div class="session-info">
+                                <h4>Плавание</h4>
+                                <p>18:00 - 19:30</p>
+                                <p>Тренер: Иванов А.</p>
+                            </div>
+                            <button class="btn btn-cancel">Отменить</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Достижения -->
+                <section class="profile-section" id="achievements-section">
+                    <h2><i class="fas fa-trophy"></i> Мои достижения</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon gold">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>1 место</h3>
+                            <p>Кубок Весны 2023</p>
+                        </div>
+                        <!-- Другие достижения -->
+                    </div>
+                </section>
+
+                <!-- Настройки -->
+                <section class="profile-section" id="settings-section">
+                    <h2><i class="fas fa-cog"></i> Настройки</h2>
+                    <div class="settings-options">
+                        <div class="setting-option">
+                            <h3>Смена пароля</h3>
+                            <form id="password-form">
+                                <div class="form-group">
+                                    <label for="current-password">Текущий пароль</label>
+                                    <input type="password" id="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">Новый пароль</label>
+                                    <input type="password" id="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-new">Подтвердите пароль</label>
+                                    <input type="password" id="confirm-new">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Изменить пароль</button>
+                            </form>
+                        </div>
+                        <div class="setting-option">
+                            <h3>Внешний вид</h3>
+                            <div class="theme-options">
+                                <button class="theme-btn light active">Светлая</button>
+                                <button class="theme-btn dark">Темная</button>
+                                <button class="theme-btn custom">Пользовательская</button>
+                            </div>
+                            <button class="btn change-background">Изменить фон</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    //ебл начинается
+    <script>
+    // Логика работы профиля
+    document.addEventListener('DOMContentLoaded', function() {
+        // Переключение между вкладками авторизации/регистрации
+        const authTabs = document.querySelectorAll('.auth-tab');
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                authTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.auth-form').forEach(form => {
+                    form.classList.remove('active');
+                });
+                
+                document.getElementById(`${this.dataset.tab}-form`).classList.add('active');
+            });
+        });
+
+        // Переключение между разделами профиля
+        const profileLinks = document.querySelectorAll('.profile-menu a');
+        profileLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.id === 'logout-btn') {
+                    logoutUser();
+                    return;
+                }
+                
+                profileLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.profile-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                document.querySelector(this.getAttribute('href')).classList.add('active');
+            });
+        });
+
+        // Имитация авторизации (в реальном проекте будет AJAX запрос)
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Проверка данных (в реальном проекте - запрос к серверу)
+            if (email && password) {
+                loginUser({
+                    username: 'Иван Петров',
+                    email: email,
+                    joinDate: '15.03.2022',
+                    avatar: 'images/avatars/user1.jpg'
+                });
+            }
+        });
+
+        // Функция входа
+        function loginUser(userData) {
+            document.getElementById('auth-section').style.display = 'none';
+            document.getElementById('profile-dashboard').style.display = 'block';
+            
+            document.getElementById('username-display').textContent = userData.username;
+            document.getElementById('user-email').value = userData.email;
+            document.getElementById('join-date').textContent = userData.joinDate;
+            document.getElementById('user-avatar').src = userData.avatar;
+            
+            // Сохраняем в localStorage (в реальном проекте используйте безопасные методы)
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userData', JSON.stringify(userData));
+        }
+
+        // Функция выхода
+        function logoutUser() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userData');
+            location.reload();
+        }
+
+        // Проверка авторизации при загрузке
+        if (localStorage.getItem('isLoggedIn')) {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            loginUser(userData);
+        }
+
+        // Изменение фона
+        document.querySelector('.change-background').addEventListener('click', function() {
+            const backgrounds = [
+                'url("https://example.com/bg1.jpg")',
+                'url("https://example.com/bg2.jpg")',
+                'url("https://example.com/bg3.jpg")'
+            ];
+            const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            document.body.style.backgroundImage = randomBg;
+        });
+
+        // Загрузка аватарки
+        document.querySelector('.change-avatar-btn').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        document.getElementById('user-avatar').src = event.target.result;
+                        // Здесь можно добавить сохранение на сервер
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            
+            input.click();
+        });
+    });
+    </script>
+</body>
+</html>
