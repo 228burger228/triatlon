@@ -593,3 +593,135 @@ profile-notification {
         height: 40px;
     }
 }
+
+
+/* Стили для страницы тренеров */
+.coaches-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+}
+
+.coach-filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+}
+
+.filter-group select {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.reset-filters {
+    padding: 0.5rem 1.5rem;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-filters:hover {
+    background: #e0e0e0;
+}
+
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.coach-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+}
+
+.coach-photo {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.coach-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coach-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.coach-info {
+    padding: 1.5rem;
+}
+
+.coach-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.coach-specialty {
+    color: var(--accent-color);
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+
+.coach-experience,
+.coach-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.coach-rating .fas {
+    color: #FFC107;
+}
+
+.coach-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.coach-btn:hover {
+    background: var(--accent-color);
+}
+
