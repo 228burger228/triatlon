@@ -29,5 +29,275 @@
             </div>
         </div>
     </section>
+     <!-- Основной контент -->
+     <section class="coaches-section">
+        <div class="container">
+            <h1 class="section-title">Наша команда тренеров</h1>
+            
+            <!-- Фильтры -->
+            <div class="coach-filters">
+                <div class="filter-group">
+                    <label for="sport-filter">Дисциплина:</label>
+                    <select id="sport-filter">
+                        <option value="all">Все</option>
+                        <option value="swimming">Плавание</option>
+                        <option value="cycling">Велоспорт</option>
+                        <option value="running">Бег</option>
+                        <option value="triathlon">Триатлон</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="level-filter">Уровень:</label>
+                    <select id="level-filter">
+                        <option value="all">Все</option>
+                        <option value="beginner">Начинающие</option>
+                        <option value="intermediate">Продвинутые</option>
+                        <option value="professional">Профессионалы</option>
+                    </select>
+                </div>
+                
+                <button class="reset-filters">Сбросить фильтры</button>
+            </div>
+            
+            <!-- Сетка тренеров -->
+            <div class="coaches-grid">
+                <!-- Тренер 1 -->
+                <div class="coach-card" data-sport="triathlon" data-level="professional">
+                    <div class="coach-photo">
+                        <img src="images/coaches/coach1.jpg" alt="Иванов Алексей">
+                        <div class="coach-badge">Главный тренер</div>
+                    </div>
+                    <div class="coach-info">
+                        <h3>Иванов Алексей</h3>
+                        <p class="coach-specialty">Триатлон, плавание</p>
+                        <div class="coach-experience">
+                            <i class="fas fa-medal"></i>
+                            <span>15 лет опыта</span>
+                        </div>
+                        <div class="coach-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7</span>
+                        </div>
+                        <button class="btn coach-btn" data-coach="1">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Тренер 2 -->
+                <div class="coach-card" data-sport="cycling" data-level="professional">
+                    <div class="coach-photo">
+                        <img src="images/coaches/coach2.jpg" alt="Петрова Мария">
+                        <div class="coach-badge">Ведущий тренер</div>
+                    </div>
+                    <div class="coach-info">
+                        <h3>Петрова Мария</h3>
+                        <p class="coach-specialty">Велоспорт, триатлон</p>
+                        <div class="coach-experience">
+                            <i class="fas fa-medal"></i>
+                            <span>12 лет опыта</span>
+                        </div>
+                        <div class="coach-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <button class="btn coach-btn" data-coach="2">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Тренер 3 -->
+                <div class="coach-card" data-sport="running" data-level="intermediate">
+                    <div class="coach-photo">
+                        <img src="images/coaches/coach3.jpg" alt="Сидоров Дмитрий">
+                    </div>
+                    <div class="coach-info">
+                        <h3>Сидоров Дмитрий</h3>
+                        <p class="coach-specialty">Бег, кросс-тренинг</p>
+                        <div class="coach-experience">
+                            <i class="fas fa-medal"></i>
+                            <span>8 лет опыта</span>
+                        </div>
+                        <div class="coach-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.2</span>
+                        </div>
+                        <button class="btn coach-btn" data-coach="3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Тренер 4 -->
+                <div class="coach-card" data-sport="swimming" data-level="beginner">
+                    <div class="coach-photo">
+                        <img src="images/coaches/coach4.jpg" alt="Кузнецова Анна">
+                    </div>
+                    <div class="coach-info">
+                        <h3>Кузнецова Анна</h3>
+                        <p class="coach-specialty">Плавание, дети</p>
+                        <div class="coach-experience">
+                            <i class="fas fa-medal"></i>
+                            <span>6 лет опыта</span>
+                        </div>
+                        <div class="coach-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5</span>
+                        </div>
+                        <button class="btn coach-btn" data-coach="4">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно с детальной информацией -->
+    <div class="modal-overlay" id="coach-modal">
+        <div class="modal-container">
+            <button class="close-modal">&times;</button>
+            <div class="modal-content">
+                <!-- Контент будет загружаться динамически -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Спортивная школа триатлона. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Фильтрация тренеров
+    document.addEventListener('DOMContentLoaded', function() {
+        const sportFilter = document.getElementById('sport-filter');
+        const levelFilter = document.getElementById('level-filter');
+        const resetBtn = document.querySelector('.reset-filters');
+        const coachCards = document.querySelectorAll('.coach-card');
+        
+        // Применение фильтров
+        function applyFilters() {
+            const sportValue = sportFilter.value;
+            const levelValue = levelFilter.value;
+            
+            coachCards.forEach(card => {
+                const cardSport = card.dataset.sport;
+                const cardLevel = card.dataset.level;
+                
+                const sportMatch = sportValue === 'all' || cardSport === sportValue;
+                const levelMatch = levelValue === 'all' || cardLevel === levelValue;
+                
+                if (sportMatch && levelMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Сброс фильтров
+        resetBtn.addEventListener('click', function() {
+            sportFilter.value = 'all';
+            levelFilter.value = 'all';
+            applyFilters();
+        });
+        
+        sportFilter.addEventListener('change', applyFilters);
+        levelFilter.addEventListener('change', applyFilters);
+        
+        // Модальное окно
+        const modal = document.getElementById('coach-modal');
+        const closeBtn = document.querySelector('.close-modal');
+        const coachBtns = document.querySelectorAll('.coach-btn');
+        
+        // Данные тренеров (можно заменить на AJAX-запрос)
+        const coachesData = {
+            1: {
+                name: "Иванов Алексей",
+                photo: "images/coaches/coach1.jpg",
+                specialty: "Триатлон, плавание",
+                experience: "15 лет",
+                achievements: [
+                    "Мастер спорта международного класса",
+                    "Победитель чемпионата Европы 2018",
+                    "Тренер года 2020"
+                ],
+                education: "Высшее спортивное образование",
+                schedule: "Пн, Ср, Пт: 18:00-21:00",
+                bio: "Специализируется на подготовке к Ironman. Разработал уникальную методику тренировок."
+            },
+            // Добавьте данные для других тренеров
+        };
+        
+        // Открытие модального окна
+        coachBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const coachId = this.dataset.coach;
+                const coach = coachesData[coachId];
+                
+                document.querySelector('.modal-content').innerHTML = `
+                    <div class="modal-photo">
+                        <img src="${coach.photo}" alt="${coach.name}">
+                    </div>
+                    <div class="modal-info">
+                        <h2>${coach.name}</h2>
+                        <p class="specialty">${coach.specialty}</p>
+                        
+                        <div class="modal-section">
+                            <h3>О тренере</h3>
+                            <p>${coach.bio}</p>
+                        </div>
+                        
+                        <div class="modal-section">
+                            <h3>Достижения</h3>
+                            <ul>
+                                ${coach.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="modal-row">
+                            <div class="modal-col">
+                                <h3>Образование</h3>
+                                <p>${coach.education}</p>
+                            </div>
+                            <div class="modal-col">
+                                <h3>Расписание</h3>
+                                <p>${coach.schedule}</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn contact-btn">Записаться</button>
+                    </div>
+                `;
+                
+                modal.style.display = 'flex';
+            });
+        });
+        
+        // Закрытие модального окна
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
