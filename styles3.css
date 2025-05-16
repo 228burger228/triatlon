@@ -1,0 +1,664 @@
+:root {
+    --primary: #2A4365;
+    --secondary: #F6AD55;
+    --accent: #E53E3E;
+    --dark: #1A202C;
+    --light: #F7FAFC;
+    --gray: #E2E8F0;
+    --text: #4A5568;
+    --text-light: #718096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    padding: 15px 0;
+    background: linear-gradient(90deg, var(--primary), #1E3A8A);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.breadcrumbs .container {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs i {
+    margin: 0 8px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Основной контент */
+.coach-detail-section {
+    padding: 40px 0;
+}
+
+.coach-detail {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+}
+
+/* Левая колонка */
+.coach-detail-left {
+    position: relative;
+}
+
+.coach-detail-photo {
+    position: relative;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    border: 8px solid white;
+}
+
+.coach-detail-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.coach-detail-photo:hover img {
+    transform: scale(1.05);
+}
+
+.coach-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, var(--secondary), #ED8936);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(246, 173, 85, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.coach-quick-facts {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--gray);
+}
+
+.coach-quick-facts h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coach-quick-facts h3:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray);
+    margin-left: 10px;
+}
+
+.coach-quick-facts ul {
+    list-style: none;
+}
+
+.coach-quick-facts li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.coach-quick-facts i {
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.coach-contact-card {
+    background: linear-gradient(135deg, var(--primary), #1E3A8A);
+    color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(42, 67, 101, 0.2);
+}
+
+.coach-contact-card h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coach-contact-card h3:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin-left: 10px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-method i {
+    width: 24px;
+    height: 24px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Правая колонка */
+.coach-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.coach-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.coach-tagline {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.coach-tagline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 3px;
+    background: var(--accent);
+}
+
+.specialty-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.specialty-badges .badge {
+    background: rgba(229, 62, 62, 0.1);
+    color: var(--accent);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(229, 62, 62, 0.2);
+}
+
+.coach-meta {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--gray);
+}
+
+.rating-block, .experience-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-block .stars {
+    color: #F6AD55;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.rating-block .stars span {
+    color: var(--dark);
+    font-weight: 600;
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+.rating-block small {
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.experience-block .exp-years {
+    text-align: center;
+}
+
+.experience-block strong {
+    font-size: 2.8rem;
+    color: var(--accent);
+    line-height: 1;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #C53030);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.experience-block span {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.coach-detail-section {
+    margin-bottom: 40px;
+}
+
+.coach-detail-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.coach-detail-section h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+.coach-detail-section h2 i {
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+
+.coach-detail-section p {
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+/* Таймлайн */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--secondary), var(--accent));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(246, 173, 85, 0.4);
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--gray);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.timeline-content:before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+}
+
+/* Методика тренировок */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.method-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray);
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--secondary);
+}
+
+.method-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, rgba(246, 173, 85, 0.1), rgba(230, 74, 61, 0.1));
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.method-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.method-card p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--accent), #C53030);
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4);
+}
+
+.outline-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.outline-btn:hover {
+    background: rgba(229, 62, 62, 0.1);
+}
+
+/* CTA блок */
+.cta-block {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, var(--primary), #1E3A8A);
+    color: white;
+    border-radius: 12px;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-block:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.cta-block:after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+}
+
+.cta-block h3 {
+    color: white;
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-block p {
+    margin: 0 0 30px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Анимации */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .coach-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .coach-detail-photo {
+        height: 350px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .coach-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coach-header h1 {
+        font-size: 2rem;
+    }
+    
+    .cta-block {
+        padding: 40px 20px;
+    }
+    
+    .cta-block h3 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .coach-detail-photo {
+        height: 300px;
+    }
+    
+    .methodology-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coach-meta {
+        padding: 15px;
+    }
+    
+    .experience-block strong {
+        font-size: 2.2rem;
+    }
+}
