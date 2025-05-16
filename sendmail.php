@@ -1,5 +1,11 @@
 <?php
 header('Content-Type: application/json');
+echo json_encode(['success' => true, 'message' => 'PHP работает!']);
+exit;
+?>
+
+<?php
+header('Content-Type: application/json');
 
 // Ваши данные
 $yourEmail = 'derser21136yandex.ru'; // Замените на ваш реальный Яндекс-email
