@@ -60,3 +60,13 @@ try {
     echo json_encode(['success' => false, 'message' => 'Ошибка при отправке']);
 }
 ?>
+
+// Проверка на ботов
+if (empty($_POST['name']) || empty($_POST['message'])) {
+    die(json_encode(['success' => false, 'message' => 'Заполните все поля']));
+}
+
+// Проверка email
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    die(json_encode(['success' => false, 'message' => 'Некорректный email']));
+}
