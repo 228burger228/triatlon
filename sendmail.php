@@ -1,44 +1,49 @@
 <?php
 header('Content-Type: application/json');
-echo json_encode(['success' => true, 'message' => 'PHP работает!']);
-exit;
-?>
 
-<?php
-header('Content-Type: application/json');
+// 1. Настройки (лучше вынести в отдельный config-файл)
+$recipientEmail = 'ваш_email@yandex.ru'; // Куда приходить письма
+$senderEmail = 'robot@ваш_сайт.ru'; // От кого (должен существовать)
+$yandexLogin = 'ваш_логин@yandex.ru'; // Без пароля!
 
-// Ваши данные
-$yourEmail = 'derser21136yandex.ru'; // Замените на ваш реальный Яндекс-email
-$subject = 'Новое сообщение с сайта от ' . $_POST['name'];
+// 2. Проверка данных
+$requiredFields = ['name', 'email', 'message'];
+foreach ($requiredFields as $field) {
+    if (empty($_POST[$field])) {
+        echo json_encode(['success' => false, 'message' => 'Заполните все обязательные поля']);
+        exit;
+    }
+}
 
-// Собираем данные из формы
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'] ?? 'Не указан';
-$message = $_POST['message'];
-
-// Формируем тело письма
-$body = "
-<h2>Новое сообщение с сайта</h2>
-<p><strong>Имя:</strong> $name</p>
-<p><strong>Email:</strong> $email</p>
-<p><strong>Телефон:</strong> $phone</p>
-<p><strong>Сообщение:</strong></p>
-<p>$message</p>
+// 3. Формирование письма
+$subject = "Новое сообщение с сайта от {$_POST['name']}";
+$message = "
+    <h2>Новое сообщение с сайта</h2>
+    <p><strong>Имя:</strong> {$_POST['name']}</p>
+    <p><strong>Email:</strong> {$_POST['email']}</p>
+    <p><strong>Телефон:</strong> {$_POST['phone'] ?? 'Не указан'}</p>
+    <p><strong>Сообщение:</strong></p>
+    <p>{nl2br($_POST['message'])}</p>
 ";
 
-// Для отправки HTML-письма должен быть установлен заголовок Content-type
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$headers .= 'From: ' . $name . ' <' . $email . '>' . "\r\n";
+// 4. Отправка через mail() (без SMTP пароля)
+$headers = [
+    'From' => "$senderEmail",
+    'Reply-To' => $_POST['email'],
+    'Content-Type' => 'text/html; charset=UTF-8',
+    'X-Mailer' => 'PHP/' . phpversion()
+];
 
-// Отправляем письмо
-$mailSent = mail($yourEmail, $subject, $body, $headers);
+$headersString = implode("\r\n", array_map(
+    fn($k, $v) => "$k: $v", 
+    array_keys($headers), 
+    $headers
+));
 
-// Отправляем ответ клиенту
-if ($mailSent) {
-    echo json_encode(['success' => true, 'message' => 'Сообщение успешно отправлено!']);
+if (mail($recipientEmail, $subject, $message, $headersString)) {
+    echo json_encode(['success' => true, 'message' => 'Сообщение отправлено!']);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Ошибка при отправке сообщения.']);
+    error_log('Ошибка отправки почты: ' . print_r(error_get_last(), true));
+    echo json_encode(['success' => false, 'message' => 'Ошибка сервера при отправке']);
 }
 ?>
