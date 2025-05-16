@@ -6,126 +6,387 @@
     <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#home">Главная</a>
+                <a href="#news">Новости</a>
+                <a href="coaches.html">Тренеры</a>
+                <a href="#gallery">Галерея</a>
+                <a href="shop.html" class="active">Магазин</a>
+                <a href="#contact">Контакты</a>
+                
+                <div class="profile-notification">
+                    <button class="notification-btn" type="button">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    
+                    <div class="profile">
+                        <div class="profile-avatar">
+                            <img src="https://photosota.club/uploads/posts/2023-07/thumbs/1688566085_photosota-club-p-triatlon-simvolika-1.jpg" alt="Аватар">
+                        </div>
+                        <div class="profile-menu">
+                            <a href="profile.html">Мой профиль</a>
+                            <a href="#settings">Настройки</a>
+                            <a href="#logout">Выйти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Кнопка скрытия/показа навигации -->
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <!-- Секция "Легкая одежда" -->
-<section id="light-clothing" class="section">
-    <div class="container">
-        <h2 class="section-title">Легкая одежда</h2>
-        <div class="products-grid">
-            <!-- Футболки -->
-            <div class="product-card">
-                <img src="images/product1.jpg" alt="Футболка Акватикс">
-                <h3>Футболка "Акватикс" (красная)</h3>
-                <p class="description">Легкая дышащая ткань для тренировок и повседневной носки</p>
-                <p class="price">2 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
+    <section id="light-clothing" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Легкая одежда</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product1.jpg" alt="Футболка Акватикс">
+                        <span class="product-badge">Хит продаж</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Футболка "Акватикс" (красная)</h3>
+                        <p class="product-description">Легкая дышащая ткань для тренировок и повседневной носки. Быстро сохнет и не сковывает движения.</p>
+                        <div class="product-price">2 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product1.jpg" alt="Футболка Акватикс">
+                        <span class="product-badge">Новинка</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Футболка "Акватикс" (синяя)</h3>
+                        <p class="product-description">Легкая дышащая ткань для тренировок и повседневной носки. Быстро сохнет и не сковывает движения.</p>
+                        <div class="product-price">2 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product11.jpg" alt="ВЕЛОмайка">
+                    </div>
+                    <div class="product-content">
+                        <h3>ВЕЛОмайка летняя</h3>
+                        <p class="product-description">90% полиэстер, 10% эластан. Легкая, "дышащая", быстросохнущая ткань с карманом на спинке.</p>
+                        <div class="product-price">5 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product12.jpg" alt="Велошорты">
+                    </div>
+                    <div class="product-content">
+                        <h3>Велошорты</h3>
+                        <p class="product-description">78% POLYAMIDE/ 22% ELASTANE, плотность 190 г/квм. Устойчивы к хлору, UPF 50+.</p>
+                        <div class="product-price">5 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="images/product1.jpg" alt="Футболка Акватикс">
-                <h3>Футболка "Акватикс" (синяя)</h3>
-                <p class="description">Легкая дышащая ткань для тренировок и повседневной носки</p>
-                <p class="price">2 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
+        </div>
+    </section>
+
+    <!-- Секция "Утепленная одежда" -->
+    <section id="warm-clothing" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Утепленная одежда</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product3.jpg" alt="Штаны с подтяжками">
+                        <span class="product-badge">Акция</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Штаны с подтяжками (красные)</h3>
+                        <p class="product-description">Подходят для умеренно-холодной погоды. Идеальны для лыжных соревнований и зимнего триатлона.</p>
+                        <div class="product-price">7 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product4.jpg" alt="Кофта красная">
+                        <span class="product-badge">Новый дизайн</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Кофта (красная, новый дизайн)</h3>
+                        <p class="product-description">Спортсмены «АКВАТИКС» носят их и зимой, и летом ☺️</p>
+                        <div class="product-price">10 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product5.jpg" alt="Кофта синяя">
+                    </div>
+                    <div class="product-content">
+                        <h3>Кофта (синяя)</h3>
+                        <p class="product-description">Спортсмены «АКВАТИКС» носят их и зимой, и летом ☺️</p>
+                        <div class="product-price">9 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product6.jpg" alt="Куртка синяя">
+                        <span class="product-badge">Подарок</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Куртка (синяя)</h3>
+                        <p class="product-description">При покупке куртки флиска-кофта в подарок! Теплая и удобная для зимних тренировок.</p>
+                        <div class="product-price">9 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product7.jpg" alt="Штаны синие">
+                    </div>
+                    <div class="product-content">
+                        <h3>Штаны с подтяжками (синие)</h3>
+                        <p class="product-description">С подтяжками, чтобы не спадали. Подходят для умеренно-холодной погоды.</p>
+                        <div class="product-price">5 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Секция "Головные уборы" -->
+    <section id="headwear" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Головные уборы</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product8.jpg" alt="Шапка легкая">
+                    </div>
+                    <div class="product-content">
+                        <h3>Шапка легкая (красная)</h3>
+                        <p class="product-description">Легкая дышащая шапка для тренировок в прохладную погоду</p>
+                        <div class="product-price">2 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product8.jpg" alt="Шапка легкая">
+                    </div>
+                    <div class="product-content">
+                        <h3>Шапка легкая (синяя)</h3>
+                        <p class="product-description">Легкая дышащая шапка для тренировок в прохладную погоду</p>
+                        <div class="product-price">2 000 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product9.jpg" alt="Шапка утепленная">
+                        <span class="product-badge">Топ продаж</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Шапка утеплённая</h3>
+                        <p class="product-description">Теплая шапка для занятий спортом в холодную погоду. Сохраняет тепло даже при -20°C.</p>
+                        <div class="product-price">2 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/product10.jpg" alt="Повязка на голову">
+                    </div>
+                    <div class="product-content">
+                        <h3>Повязка на голову</h3>
+                        <p class="product-description">Удобная повязка для защиты ушей во время тренировок. Не сползает и не мешает.</p>
+                        <div class="product-price">1 500 ₽</div>
+                        <div class="product-actions">
+                            <button class="buy-btn">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                            <button class="wishlist-btn" title="Добавить в избранное">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // Функционал скрытия/показа навигации
+    const navToggle = document.getElementById('navToggle');
+    const navbar = document.querySelector('.navbar');
+    let isNavHidden = false;
+
+    navToggle.addEventListener('click', () => {
+        isNavHidden = !isNavHidden;
+        
+        if (isNavHidden) {
+            navbar.classList.add('hidden');
+            navToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        } else {
+            navbar.classList.remove('hidden');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+
+    // Автоматическое скрытие навигации при прокрутке вниз
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.classList.remove('hidden');
+            isNavHidden = false;
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !isNavHidden) {
+            navbar.classList.add('hidden');
+            isNavHidden = true;
+            navToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        } else if (currentScroll < lastScroll && isNavHidden) {
+            navbar.classList.remove('hidden');
+            isNavHidden = false;
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            <!-- Велоформа -->
-            <div class="product-card">
-                <img src="images/product11.jpg" alt="ВЕЛОмайка">
-                <h3>ВЕЛОмайка летняя</h3>
-                <p class="description">90% полиэстер, 10% эластан. Легкая, "дышащая", быстросохнущая ткань с карманом на спинке.</p>
-                <p class="price">5 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product12.jpg" alt="Велошорты">
-                <h3>Велошорты</h3>
-                <p class="description">78% POLYAMIDE/ 22% ELASTANE, плотность 190 г/квм. Устойчивы к хлору, UPF 50+.</p>
-                <p class="price">5 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-        </div>
-    </div>
-</section>
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-<!-- Секция "Утепленная одежда" -->
-<section id="warm-clothing" class="section" style="background-color: #F7FAFC;">
-    <div class="container">
-        <h2 class="section-title">Утепленная одежда</h2>
-        <div class="products-grid">
-            <!-- Разминочный костюм -->
-            <div class="product-card">
-                <img src="images/product3.jpg" alt="Разминочный костюм">
-                <h3>Штаны с подтяжками (красные)</h3>
-                <p class="description">Подходят для умеренно-холодной погоды. Идеальны для лыжных соревнований и зимнего триатлона.</p>
-                <p class="price">7 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product4.jpg" alt="Кофта красная">
-                <h3>Кофта (красная, новый дизайн)</h3>
-                <p class="description">Спортсмены «АКВАТИКС» носят их и зимой, и летом ☺️</p>
-                <p class="price">10 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product5.jpg" alt="Кофта синяя">
-                <h3>Кофта (синяя)</h3>
-                <p class="description">Спортсмены «АКВАТИКС» носят их и зимой, и летом ☺️</p>
-                <p class="price">9 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product6.jpg" alt="Куртка синяя">
-                <h3>Куртка (синяя)</h3>
-                <p class="description">При покупке куртки флиска-кофта в подарок!</p>
-                <p class="price">9 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product7.jpg" alt="Штаны синие">
-                <h3>Штаны с подтяжками (синие)</h3>
-                <p class="description">С подтяжками, чтобы не спадали. Подходят для умеренно-холодной погоды.</p>
-                <p class="price">5 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-        </div>
-    </div>
-</section>
+    // Анимация появления карточек при загрузке
+    document.addEventListener('DOMContentLoaded', () => {
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            card.style.animationDelay = `${0.1 * index}s`;
+        });
+    });
+    </script>
 
-<!-- Секция "Головные уборы" -->
-<section id="headwear" class="section">
-    <div class="container">
-        <h2 class="section-title">Головные уборы</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="images/product8.jpg" alt="Шапка легкая">
-                <h3>Шапка легкая (красная)</h3>
-                <p class="description">Легкая дышащая шапка для тренировок в прохладную погоду</p>
-                <p class="price">2 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product8.jpg" alt="Шапка легкая">
-                <h3>Шапка легкая (синяя)</h3>
-                <p class="description">Легкая дышащая шапка для тренировок в прохладную погоду</p>
-                <p class="price">2 000 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product9.jpg" alt="Шапка утепленная">
-                <h3>Шапка утеплённая</h3>
-                <p class="description">Теплая шапка для занятий спортом в холодную погоду</p>
-                <p class="price">2 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-            <div class="product-card">
-                <img src="images/product10.jpg" alt="Повязка на голову">
-                <h3>Повязка на голову</h3>
-                <p class="description">Удобная повязка для защиты ушей во время тренировок</p>
-                <p class="price">1 500 ₽</p>
-                <button class="btn buy-btn">В корзину</button>
-            </div>
-        </div>
-    </div>
-</section>
 </body>
 </html>
