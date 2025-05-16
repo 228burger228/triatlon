@@ -47,28 +47,24 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const formData = new FormData(form);
     const responseDiv = document.getElementById('formResponse');
     
-    fetch('sendmail.php', {
+    fetch('sendmail_gmail.php', {
         method: 'POST',
         body: formData
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
-            responseDiv.innerHTML = `<div class="success-message">${data.message}</div>`;
-            form.reset();
-        } else {
-            responseDiv.innerHTML = `<div class="error-message">${data.message}</div>`;
-        }
+        responseDiv.innerHTML = data.success 
+            ? `<div class="success-message">${data.message}</div>`
+            : `<div class="error-message">${data.message}</div>`;
+        if (data.success) form.reset();
     })
-    .catch(error => {
-        responseDiv.innerHTML = `<div class="error-message">Ошибка соединения. Попробуйте позже.</div>`;
+    .catch(() => {
+        responseDiv.innerHTML = '<div class="error-message">Ошибка соединения</div>';
     });
 });
 </script>
 
 
+    
 </body>
-
-
-
 </html>
