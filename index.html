@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Спортивная школа триатлона</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
@@ -241,6 +242,9 @@
 
     
 <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('show');
+});
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -281,6 +285,7 @@
   });
 </script>
 </html>
+
 
 
 
