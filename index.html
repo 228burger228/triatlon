@@ -14,19 +14,21 @@
     </div>
    <!-- NAVIGATION -->
   <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">Главная</a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Главная</a>
-        <a href="#news">Новости</a>
-        <a href="coaches.html">Тренеры</a>
-        <a href="#gallery">Галерея</a>
-        <a href="shop.html">Экипировка</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
+  <div class="container nav-inner">
+    <a href="#home" class="brand">Главная</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Главная</a>
+      <a href="#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="#gallery">Галерея</a>
+      <a href="shop.html">Экипировка</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
     
 <!-- профиль -->
 <div class="profile-notification">
@@ -239,6 +241,14 @@
 
     
 <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('show');
+});
+    document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('show');
+  });
+});
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle && navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
@@ -271,6 +281,7 @@
     });
     </script>
 </html>
+
 
 
 
