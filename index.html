@@ -142,7 +142,15 @@
       </a>
     </div>
   </section>
-    
+      <!-- ===== Telegram Новости ===== -->
+<section id="telegram" class="section telegram">
+  <h2 class="section-title">Новости из Telegram</h2>
+  <div class="telegram-wrapper">
+    <button class="tg-btn" onclick="switchPost(-1)">← Назад</button>
+    <div id="telegram-post-frame" class="telegram-frame"></div>
+    <button class="tg-btn" onclick="switchPost(1)">Вперёд →</button>
+  </div>
+</section>
     
     
 <!-- контакты -->
@@ -160,6 +168,10 @@
   </footer>
 
 
+
+
+    
+</body>
     <script>
   const telegramPosts = [
     "https://t.me/dussh_aquatics/1419",
@@ -242,8 +254,8 @@
         });
     });
     </script>
-</body>
 </html>
+
 
 
 
