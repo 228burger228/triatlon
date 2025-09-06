@@ -165,18 +165,23 @@
 
     /* Hero */
     .hero {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                    url('saranks.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('saranks.JPG') center/cover no-repeat;
   min-height: 85vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: var(--text-light);
+  text-align: center;     /* центрируем текст */
   padding: 100px 20px 60px;
-  margin-top: 70px; /* если меню фиксировано сверху */
+  margin-top: 70px;
+}
+
+/* Если кнопка а - блочный элемент и нужно */
+.hero .cta-button {
+  display: block;
+  margin: 20px auto 0;
 }
     .hero-content {
       max-width: 900px;
@@ -413,6 +418,7 @@
       .hero h1 { font-size: 2rem; }
       .gallery-item img { height: 140px; }
     }
+
 
 
 
