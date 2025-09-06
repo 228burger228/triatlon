@@ -125,6 +125,16 @@
       </a>
     </div>
   </section>
+    
+    <section id="telegram-section" class="telegram-widget-section">
+  <h2 class="section-title">Новости из Telegram</h2>
+  <div class="telegram-widget-container">
+    <button class="tg-prev" onclick="switchPost(-1)">&#10094;</button>
+    <div id="telegram-post-frame" class="telegram-frame"></div>
+    <button class="tg-next" onclick="switchPost(1)">&#10095;</button>
+  </div>
+</section>
+    
 <!-- контакты -->
   <footer id="contact">
     <div class="container footer-inner">
@@ -134,11 +144,56 @@
       </div>
       <div class="socials">
         <a href="#"><i class="Вк"></i></a>
-        <a href="#"><i class="Телеграмм"></i></a>
+        <a href="https://t.me/dussh_aquatics"><i class="Телеграмм"></i></a>
       </div>
     </div>
   </footer>
 
+
+    
+<script>
+  const telegramPosts = [
+    "dussh_aquatics/1",
+    "dussh_aquatics/2",
+    "dussh_aquatics/3"
+  ];
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  function renderTelegramPost(index) {
+    const container = document.getElementById("telegram-post-frame");
+    container.innerHTML = "";
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://telegram.org/js/telegram-widget.js?22";
+    script.setAttribute("data-telegram-post", telegramPosts[index]);
+    script.setAttribute("data-width", "100%");
+    script.setAttribute("data-userpic", "true");
+    script.setAttribute("data-dark", "false");
+    container.appendChild(script);
+  }
+
+  function switchPost(direction = 1) {
+    currentIndex = (currentIndex + direction + telegramPosts.length) % telegramPosts.length;
+    renderTelegramPost(currentIndex);
+  }
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => switchPost(1), 10000);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    renderTelegramPost(currentIndex);
+    startAutoScroll();
+    const frame = document.getElementById("telegram-post-frame");
+    frame.addEventListener("mouseenter", stopAutoScroll);
+    frame.addEventListener("mouseleave", startAutoScroll);
+  });
+</script>
     
 <script>
     const navToggle = document.getElementById('navToggle');
@@ -174,4 +229,5 @@
     </script>
 </body>
 </html>
+
 
