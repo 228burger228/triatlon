@@ -23,6 +23,54 @@
       padding: 0 20px;
     }
 
+/* тг виджет */
+.telegram-widget-section {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 700px;
+}
+
+.telegram-widget-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.telegram-frame {
+  flex: 1;
+  min-height: 400px;
+}
+
+.tg-prev, .tg-next {
+  background: #3182CE;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tg-prev:hover, .tg-next:hover {
+  background: #2A4365;
+}
+
+@media (max-width: 600px) {
+  .telegram-widget-container {
+    flex-direction: column;
+  }
+  .tg-prev, .tg-next {
+    margin: 10px 0;
+  }
+}
+/*конец тг*/
+
+
+
+
     /* Навигация */
     .navbar {
       position: fixed;
@@ -321,3 +369,4 @@
       .hero h1 { font-size: 2rem; }
       .gallery-item img { height: 140px; }
     }
+
