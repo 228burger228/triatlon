@@ -165,18 +165,19 @@
 
     /* Hero */
     .hero {
-      background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('hero-bg.jpg') center/cover no-repeat;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-light);
-      padding: 100px 20px 60px;
-      margin-top: 70px;
-    }
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url('saranks.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  padding: 100px 20px 60px;
+  margin-top: 70px; /* если меню фиксировано сверху */
+}
     .hero-content {
       max-width: 900px;
     }
@@ -412,6 +413,7 @@
       .hero h1 { font-size: 2rem; }
       .gallery-item img { height: 140px; }
     }
+
 
 
 
