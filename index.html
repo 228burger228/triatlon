@@ -241,46 +241,47 @@
 
     
 <script>
-    document.getElementById('navToggle').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('show');
-});
-    document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('show');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle && navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
-});
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle && navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-    // Scroll highlighting navigation
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-links a');
-    function highlightNav(){
-      const scrollPos = window.scrollY + 80;
-      sections.forEach(sec => {
-        if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
-          navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + sec.id));
-        }
-      });
-    }
-    window.addEventListener('scroll', highlightNav);
-    highlightNav();
-  </script>
-
-    <script>
-    window.addEventListener('scroll', function() {
-        document.querySelectorAll('.section').forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.scrollY > (sectionTop - sectionHeight / 2)) {
-                section.classList.add('active');
-            }
-        });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
     });
-    </script>
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  function highlightNav(){
+    const scrollPos = window.scrollY + 80;
+    sections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.clientHeight) > scrollPos) {
+        navItems.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`);
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', highlightNav);
+  highlightNav();
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.section').forEach(section => {
+      if (window.scrollY > (section.offsetTop - section.clientHeight / 2)) {
+        section.classList.add('active');
+      }
+    });
+  });
+</script>
 </html>
+
 
 
 
