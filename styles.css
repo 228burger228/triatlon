@@ -23,48 +23,36 @@
       padding: 0 20px;
     }
 
-/* тг виджет */
-.telegram-widget-section {
-  text-align: center;
-  margin: 50px auto;
-  max-width: 700px;
-}
-
-.telegram-widget-container {
+/* тг  */
+.telegram-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .telegram-frame {
-  flex: 1;
-  min-height: 400px;
+  flex: 1 1 400px;
+  max-width: 600px;
+  min-width: 320px;
+  min-height: 300px;
 }
 
-.tg-prev, .tg-next {
-  background: #3182CE;
-  border: none;
+.tg-btn {
+  background-color: #0088cc;
   color: white;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
 }
 
-.tg-prev:hover, .tg-next:hover {
-  background: #2A4365;
-}
-
-@media (max-width: 600px) {
-  .telegram-widget-container {
-    flex-direction: column;
-  }
-  .tg-prev, .tg-next {
-    margin: 10px 0;
-  }
+.tg-btn:hover {
+  background-color: #0073a6;
 }
 /*конец тг*/
 
@@ -369,4 +357,5 @@
       .hero h1 { font-size: 2rem; }
       .gallery-item img { height: 140px; }
     }
+
 
