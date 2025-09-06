@@ -189,28 +189,31 @@
 
 
 
-    
-</body>
-    <script>
+     <<script>
   const telegramPosts = [
     "dussh_aquatics/1419",
-    "dussh_aquatics/1420",
+    "dussh_aquatics/1420", 
     "dussh_aquatics/1417",
-    "/dussh_aquatics/1391"
+    "dussh_aquatics/1391"  // Убрал лишний слеш
   ];
   let currentIndex = 0;
   let autoScrollInterval;
 
   function renderTelegramPost(index) {
     const container = document.getElementById("telegram-post-frame");
+    
+    // Полная очистка контейнера
     container.innerHTML = "";
+    
+    // Создаем скрипт с правильным URL
     const script = document.createElement("script");
     script.async = true;
-    script.src = "https://t.me/dussh_aquatics";
+    script.src = "https://t.me/js/telegram-widget.js";  // Правильный URL
     script.setAttribute("data-telegram-post", telegramPosts[index]);
     script.setAttribute("data-width", "100%");
     script.setAttribute("data-userpic", "true");
     script.setAttribute("data-dark", "false");
+    
     container.appendChild(script);
   }
 
@@ -229,11 +232,17 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Проверяем существование контейнера
+    const frame = document.getElementById("telegram-post-frame");
+    if (!frame) {
+      console.error("Контейнер telegram-post-frame не найден");
+      return;
+    }
+
     renderTelegramPost(currentIndex);
     startAutoScroll();
 
-    // При наведении на виджет — останавливаем автопрокрутку, когда убрали — возобновляем
-    const frame = document.getElementById("telegram-post-frame");
+    // При наведении на виджет — останавливаем автопрокрутку
     frame.addEventListener("mouseenter", stopAutoScroll);
     frame.addEventListener("mouseleave", startAutoScroll);
   });
@@ -284,7 +293,9 @@
     });
   });
 </script>
+</body>
 </html>
+
 
 
 
