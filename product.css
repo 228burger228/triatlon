@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #2A4365;
+    --accent-color: #3182CE;
+    --secondary-color: #F6AD55;
+    --text-dark: #2D3748;
+    --light-bg: #F7FAFC;
+    --border-radius: 12px;
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #fff;
+    color: var(--text-dark);
+    padding-top: 70px;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar { position: fixed; top:0; left:0; width:100%; background:#fff; box-shadow:var(--shadow-md); z-index:1000; }
+.nav-links { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:15px 0; }
+.nav-links a { text-decoration:none; color:var(--primary-color); padding:8px 15px; border-radius:var(--border-radius); transition: var(--transition);}
+.nav-links a.active { color:var(--accent-color); font-weight:600; }
+
+/* Стиль страницы продукта */
+.product-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+.product-image {
+    flex:1 1 400px;
+    max-width: 500px;
+}
+.product-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+.product-details {
+    flex:1 1 400px;
+}
+.product-details h1 { font-size:2rem; color:var(--primary-color); margin-bottom:15px;}
+.product-details p { margin-bottom:10px; color:#555; }
+.product-price { font-size:1.8rem; font-weight:700; color:var(--accent-color); margin-bottom:15px;}
+.product-extra { margin-top:20px; }
+.product-extra table {
+    width:100%;
+    border-collapse: collapse;
+}
+.product-extra th, .product-extra td {
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:left;
+}
+.buy-btn {
+    display:inline-block;
+    padding:12px 20px;
+    background:var(--primary-color);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+    transition: var(--transition);
+    margin-top:15px;
+}
+.buy-btn:hover { background:var(--accent-color); }
+
+@media(max-width:768px) {
+    .product-page { flex-direction: column; gap:20px; }
+}
