@@ -72,6 +72,23 @@
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const photos = document.querySelectorAll(".bg-photo");
+  photos.forEach(photo => {
+    // случайные проценты для top и left
+    const top = Math.random() * 80;   // от 0 до 80% высоты
+    const left = Math.random() * 80;  // от 0 до 80% ширины
+    const rotate = (Math.random() * 40) - 20; // от -20 до 20 градусов
+
+    photo.style.top = top + "%";
+    photo.style.left = left + "%";
+    photo.style.transform = `rotate(${rotate}deg)`;
+  });
+});
+</script>
+  
+  
+<script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
