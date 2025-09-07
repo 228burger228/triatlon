@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Велоформа — Акватикс</title>
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Главная</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="index.html#gallery">Галерея</a>
+      <a href="shop.html" class="active">Экипировка</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<div class="container product-page">
+  <div class="product-image">
+    <img src="images/bicycle.png" alt="Велоформа">
+  </div>
+  <div class="product-details">
+    <h1>Велоформа</h1>
+    <p>Эластичная и лёгкая форма для велоспорта. Подходит для тренировок и соревнований, обеспечивает комфорт и свободу движений даже во время длительных заездов.</p>
+    <div class="product-price">от 5 000 ₽</div>
+    <button class="buy-btn"><i class="fas fa-shopping-cart"></i> Добавить в корзину</button>
+
+    <div class="product-extra">
+      <h2>Размеры</h2>
+      <table>
+        <tr><th>Размер</th><th>Рост</th><th>Грудь</th></tr>
+        <tr><td>S</td><td>160-170</td><td>86-90</td></tr>
+        <tr><td>M</td><td>170-180</td><td>92-98</td></tr>
+        <tr><td>L</td><td>180-185</td><td>100-106</td></tr>
+        <tr><td>XL</td><td>185-195</td><td>108-114</td></tr>
+      </table>
+
+      <h2>Сезонность</h2>
+      <p>Весна / Лето</p>
+
+      <h2>Особенности</h2>
+      <ul>
+        <li>Анатомический крой для удобной посадки</li>
+        <li>Дышащие вставки для вентиляции</li>
+        <li>Эластичная ткань, повторяющая движения</li>
+        <!--<li>Светоотражающие элементы для безопасности</li>-->
+        <li>Задние карманы для бутылки и мелочей</li>
+      </ul>
+
+      <h2>Материалы</h2>
+      <p>80% полиэстер, 20% эластан<br>
+         Вставки: сетчатый полиэстер для вентиляции</p>
+
+      <h2>Вес</h2>
+      <p>Около 350 г (размер M)</p>
+
+      <h2>Уход</h2>
+      <ul>
+        <li>Стирка при 30°C</li>
+        <li>Не использовать кондиционер для белья</li>
+        <li>Не сушить в машинке</li>
+        <li>Сушить на открытом воздухе</li>
+      </ul>
+
+      <h2>Страна производства</h2>
+      <p>Италия</p>
+    </div>
+  </div>
+</div>
+
+<!-- Галерея фото 
+<div class="container photo-gallery">
+  <h2>Фото с заездов</h2>
+  <div class="gallery-grid">
+    <img src="images/background/bike1.jpg" alt="Групповая тренировка на шоссе">
+    <img src="images/background/bike2.jpg" alt="Индивидуальная тренировка">
+    <img src="images/background/bike3.jpg" alt="Соревнования по велоспорту">
+  </div>
+</div>-->
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
