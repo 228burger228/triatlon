@@ -175,43 +175,65 @@ body {
   display: none; /* прячем на десктопе */
 }
 
-/* ====== Мобильное меню ====== */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background: var(--text-light);
-    padding: 20px 0;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    box-shadow: var(--shadow-lg);
-
-    display: none; /* скрыто по умолчанию */
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .nav-links.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .nav-links a {
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-    border-top: 1px solid #eee;
-  }
-
-  .nav-toggle {
-    display: block; /* показываем бургер */
-  }
+/* ====== Мобильное меню (отдельный блок) ====== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: var(--text-light);
+  box-shadow: -4px 0 12px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
 }
+
+.mobile-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.mobile-nav a:hover {
+  color: var(--accent-color);
+}
+
+/* кнопка закрытия */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* активное состояние */
+.mobile-nav.open {
+  right: 0;
+}
+
+/* показываем бургер только на телефоне */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+}
+
 
 /* ====== Hero ====== */
 .hero {
@@ -532,4 +554,5 @@ footer {
   .hero h1 { font-size: 2rem; }
   .gallery-item img { height: 140px; }
 }
+
 
