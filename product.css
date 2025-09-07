@@ -10,14 +10,19 @@
     --transition: all 0.3s ease;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
     background: #fff;
     color: var(--text-dark);
     padding-top: 70px;
 }
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -25,58 +30,142 @@ body {
     padding: 0 20px;
 }
 
-/* Навигация */
-.navbar { position: fixed; top:0; left:0; width:100%; background:#fff; box-shadow:var(--shadow-md); z-index:1000; }
-.nav-links { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:15px 0; }
-.nav-links a { text-decoration:none; color:var(--primary-color); padding:8px 15px; border-radius:var(--border-radius); transition: var(--transition);}
-.nav-links a.active { color:var(--accent-color); font-weight:600; }
+/* NAVIGATION */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.98);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    padding: 10px 0;
+}
 
-/* Стиль страницы продукта */
-.product-page {
+.nav-inner {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 40px;
+    justify-content: space-between;
+    align-items: center;
 }
-.product-image {
-    flex:1 1 400px;
-    max-width: 500px;
+
+.nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
 }
+
+.nav-links a.active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.nav-toggle {
+    display: none;
+    background: var(--accent-color);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* PRODUCT PAGE */
+.product-page {
+    margin-top: 50px;
+}
+
 .product-image img {
     width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 20px auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
 }
-.product-details {
-    flex:1 1 400px;
+
+.product-details h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
 }
-.product-details h1 { font-size:2rem; color:var(--primary-color); margin-bottom:15px;}
-.product-details p { margin-bottom:10px; color:#555; }
-.product-price { font-size:1.8rem; font-weight:700; color:var(--accent-color); margin-bottom:15px;}
-.product-extra { margin-top:20px; }
+
+.product-details p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buy-btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto 30px auto;
+    padding: 12px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.buy-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.product-extra h2 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.product-extra p, .product-extra ul, .product-extra table {
+    margin-bottom: 20px;
+}
+
+.product-extra ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
 .product-extra table {
-    width:100%;
+    width: 100%;
     border-collapse: collapse;
 }
-.product-extra th, .product-extra td {
-    border:1px solid #ddd;
-    padding:10px;
-    text-align:left;
-}
-.buy-btn {
-    display:inline-block;
-    padding:12px 20px;
-    background:var(--primary-color);
-    color:#fff;
-    border:none;
-    border-radius:6px;
-    font-weight:600;
-    cursor:pointer;
-    transition: var(--transition);
-    margin-top:15px;
-}
-.buy-btn:hover { background:var(--accent-color); }
 
-@media(max-width:768px) {
-    .product-page { flex-direction: column; gap:20px; }
+.product-extra th, .product-extra td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .product-image img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-toggle {
+        display: block;
+    }
 }
