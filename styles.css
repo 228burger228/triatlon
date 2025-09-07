@@ -163,19 +163,30 @@
 }
 
 /* Медиазапросы для мобильных устройств */
+/*  Адаптивное меню  */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: white;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
+    position: absolute;
+    top: 60px; /* высота navbar */
+    right: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
   }
 
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
   .nav-links.show {
     display: flex;
   }
@@ -514,6 +525,7 @@
       .hero h1 { font-size: 2rem; }
       .gallery-item img { height: 140px; }
     }
+
 
 
 
