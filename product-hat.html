@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шапки — Акватикс</title>
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Главная</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="index.html#gallery">Галерея</a>
+      <a href="shop.html" class="active">Экипировка</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<div class="container product-page">
+  <div class="product-image">
+    <img src="images/hat.png" alt="Шапки">
+  </div>
+  <div class="product-details">
+    <h1>Шапки</h1>
+    <p>Универсальные головные уборы для тренировок и отдыха. Подходят для любой погоды — от прохладных вечеров до морозных зимних стартов.</p>
+    <div class="product-price">от 1 500 ₽</div>
+    <button class="buy-btn"><i class="fas fa-shopping-cart"></i> Добавить в корзину</button>
+
+    <div class="product-extra">
+      <h2>Модели</h2>
+      <ul>
+        <li>Тонкая тренировочная шапка</li>
+        <li>Флисовая зимняя шапка</li>
+        <li>Шапка-бини для повседневного ношения</li>
+      </ul>
+
+      <h2>Особенности</h2>
+      <ul>
+        <li>Эластичная посадка</li>
+        <li>Разнообразие цветов и дизайнов</li>
+        <li>Лёгкий вес</li>
+        <li>Дышащая ткань</li>
+      </ul>
+
+      <h2>Материалы</h2>
+      <p>Полиэстер, хлопок, шерсть (в зависимости от модели)</p>
+
+      <h2>Уход</h2>
+      <ul>
+        <li>Стирка при 30°C</li>
+        <li>Не использовать отбеливатель</li>
+        <li>Не сушить в машинке</li>
+      </ul>
+
+      <h2>Страна производства</h2>
+      <p>Россия</p>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container photo-gallery">
+  <h2>Фото</h2>
+  <div class="gallery-grid">
+    <img src="images/background/hat1.jpg" alt="Тонкая спортивная шапка">
+    <img src="images/background/hat2.jpg" alt="Флисовая модель">
+    <img src="images/background/hat3.jpg" alt="Шапка-бини в повседневном стиле">
+  </div>
+</div>-->
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
