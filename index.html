@@ -243,46 +243,56 @@
 
 
 <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('show');
-});
-  const navToggle = document.getElementById('navToggle');
+document.addEventListener('DOMContentLoaded', () => {
+  // Меню бургер
+  const navToggleBtns = document.querySelectorAll('.nav-toggle');
   const navLinks = document.getElementById('navLinks');
 
-  navToggle && navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  navToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
   });
 
+  // Закрытие меню при клике на ссылку
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('show');
     });
   });
 
+  // Подсветка активного пункта навигации
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-links a');
 
-  function highlightNav(){
-    const scrollPos = window.scrollY + 80;
+  function highlightNav() {
+    const scrollPos = window.scrollY + 80; // смещение для фиксированной шапки
     sections.forEach(sec => {
+      const id = sec.id;
       if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.clientHeight) > scrollPos) {
         navItems.forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`);
+          a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
         });
       }
     });
   }
-
   window.addEventListener('scroll', highlightNav);
   highlightNav();
-</script>
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('.section').forEach(section => {
-      if (window.scrollY > (section.offsetTop - section.clientHeight / 2)) {
+
+  // Анимация появления секций при скролле
+  const animSections = document.querySelectorAll('.section');
+  function animateSections() {
+    const scrollY = window.scrollY;
+    animSections.forEach(section => {
+      if (scrollY > (section.offsetTop - section.clientHeight / 2)) {
         section.classList.add('active');
       }
     });
-  });
+  }
+  window.addEventListener('scroll', animateSections);
+  animateSections();
+});
 </script>
+
 </html>
+
