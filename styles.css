@@ -1,4 +1,4 @@
- :root {
+: root {
       --primary-color: #2A4365;
       --accent-color: #3182CE;
       --text-dark: #2D3748;
@@ -119,14 +119,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  z-index: 1000;
-}
-
-.nav-inner {
-  display: flex;
+@@ -129,6 +130,7 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
@@ -134,60 +127,77 @@
 }
 
 .nav-links {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-}
+@@ -139,374 +141,369 @@
 
 .nav-links a {
   text-decoration: none;
+  color: var(--primary-color);
   color: #333;
   font-weight: 500;
   text-transform: uppercase;
   padding: 8px 6px;
   border-radius: 6px;
+  transition: color var(--transition), background var(--transition);
   transition: color 0.3s, background 0.3s;
 }
 
+.nav-links a.active,
 .nav-links a:hover {
+  color: var(--accent-color);
+  background: rgba(49, 130, 206, 0.1);
   color: #007bff;
   background: rgba(0, 123, 255, 0.1);
 }
 
 .nav-toggle {
   display: none;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-color);
+  color: #fff;
   background: none;
   border: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
   font-size: 24px;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background var(--transition);
 }
 
-/* Медиазапросы для мобильных устройств */
-/*  Адаптивное меню  */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 60px; /* высота navbar */
-    right: 20px;
-    background: #fff;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    z-index: 999;
-  }
+.nav-toggle:hover {
+  background: var(--primary-color);
+}
 
-  .nav-links.open {
+/* Адаптив для мобильных */
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  .nav-toggle {
     display: flex;
   }
 
-  .nav-toggle {
-    display: block;
+  .nav-links {
+    position: fixed;
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    background: #fff;
+    right: 0;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    gap: 1rem;
+    transition: right var(--transition);
+    gap: 0;
   }
-}
+
   .nav-links.show {
+    right: 0;
     display: flex;
   }
 
@@ -203,35 +213,19 @@
   }
 }
 
-   /* HERO SECTION */
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* или нужная высота */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    background-image: url('sochi6.jpg'); /* путь к вашей картинке */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3); /* затемнение */
-}
-
-.hero .hero-content {
-    z-index: 2; /* чтобы текст был поверх */
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    z-index: 1;
+    /* Hero */
+    .hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('saranks.JPG') center/cover no-repeat;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+  text-align: center;     /* центрируем текст */
+  padding: 100px 20px 60px;
+  margin-top: 70px;
 }
 
 /* Если кнопка а - блочный элемент и нужно */
@@ -533,23 +527,3 @@
         padding: 16px;
         z-index: 1000;
       }
-
-      .gallery-item img { height: 150px; }
-      .news-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2rem; }
-      .gallery-item img { height: 140px; }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
