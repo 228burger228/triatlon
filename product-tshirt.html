@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<!--фон картинками -->
+<!--фон картинками 
 <div class="background-photos">
   <div class="bg-photo" style="background-image: url('poxod1.jpeg');"></div>
   <div class="bg-photo" style="background-image: url('poxod2.jpeg');"></div>
@@ -19,9 +19,9 @@
   <div class="bg-photo" style="background-image: url('sochi2.jpg');"></div>
   <div class="bg-photo" style="background-image: url('sochi3.jpg');"></div>
   <div class="bg-photo" style="background-image: url('sochi4.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi5.jpg');"></div>
-  <!-- Добавьте больше фото по необходимости -->
-</div>
+  <div class="bg-photo" style="background-image: url('sochi5.jpg');"></div>-->
+  <!-- Добавьте больше фото по необходимости 
+</div>-->
 
 
 
@@ -71,21 +71,7 @@
     </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const photos = document.querySelectorAll(".bg-photo");
-  photos.forEach(photo => {
-    // случайные проценты для top и left
-    const top = Math.random() * 80;   // от 0 до 80% высоты
-    const left = Math.random() * 80;  // от 0 до 80% ширины
-    const rotate = (Math.random() * 40) - 20; // от -20 до 20 градусов
 
-    photo.style.top = top + "%";
-    photo.style.left = left + "%";
-    photo.style.transform = `rotate(${rotate}deg)`;
-  });
-});
-</script>
   
   
 <script>
