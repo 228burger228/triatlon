@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Разминочный костюм — Акватикс</title>
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- фон картинками -->
+<div class="background-photos">
+  <div class="bg-photo" style="background-image: url('images/background/poxod1.jpeg');"></div>
+  <div class="bg-photo" style="background-image: url('images/background/poxod2.jpeg');"></div>
+  <div class="bg-photo" style="background-image: url('images/background/sochi1.jpg');"></div>
+  <div class="bg-photo" style="background-image: url('images/background/sochi2.jpg');"></div>
+  <div class="bg-photo" style="background-image: url('images/background/sochi3.jpg');"></div>
+</div>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Главная</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="index.html#gallery">Галерея</a>
+      <a href="shop.html" class="active">Экипировка</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- PRODUCT CONTENT -->
+<div class="container product-page">
+  <div class="product-image">
+    <img src="images/light_jacket.png" alt="Разминочный костюм">
+  </div>
+  <div class="product-details">
+    <h1>Разминочный костюм</h1>
+    <p>Подходит для умеренно-холодной весенней, осенней и тёплой зимней погоды.</p>
+    <div class="product-price">от 7 000 ₽</div>
+    <button class="buy-btn"><i class="fas fa-shopping-cart"></i> Добавить в корзину</button>
+
+    <div class="product-extra">
+      <h2>Размеры</h2>
+      <table>
+        <tr><th>Размер</th><th>Рост</th><th>Грудь</th></tr>
+        <tr><td>S</td><td>160-170</td><td>88-92</td></tr>
+        <tr><td>M</td><td>170-180</td><td>96-100</td></tr>
+        <tr><td>L</td><td>180-190</td><td>104-108</td></tr>
+        <tr><td>XL</td><td>185-195</td><td>110-114</td></tr>
+      </table>
+
+      <h2>Сезонность</h2>
+      <p>Весна / Осень / Тёплая зима</p>
+
+      <h2>Особенности</h2>
+      <ul>
+        <li>Защита от ветра и влаги</li>
+        <li>Лёгкий утеплитель</li>
+        <li>Эластичные манжеты и пояс</li>
+        <li>Удобные карманы на молнии</li>
+      </ul>
+
+      <h2>Материалы</h2>
+      <p>Основная ткань: 85% полиэстер, 15% эластан<br>
+         Подкладка: микрофлис для дополнительного тепла</p>
+
+      <h2>Вес</h2>
+      <p>Около 650 г (размер M)</p>
+
+      <h2>Уход</h2>
+      <ul>
+        <li>Стирка при 30°C</li>
+        <li>Не отбеливать</li>
+        <li>Не использовать сушильную машину</li>
+        <li>Гладить при низкой температуре</li>
+      </ul>
+
+      <h2>Страна производства</h2>
+      <p>Россия</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
