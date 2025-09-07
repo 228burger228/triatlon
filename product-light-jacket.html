@@ -4,24 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Разминочный костюм — Акватикс</title>
-  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="css/product.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- фон картинками -->
-<div class="background-photos">
-  <div class="bg-photo" style="background-image: url('poxod1.jpeg');"></div>
-  <div class="bg-photo" style="background-image: url('poxod2.jpeg');"></div>
-  <div class="bg-photo" style="background-image: url('poxod3.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('poxod4.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi1.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi2.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi3.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi4.jpg');"></div>
-  <div class="bg-photo" style="background-image: url('sochi5.jpg');"></div>
-
-<!-- NAVIGATION -->
 <header class="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="brand">Главная</a>
@@ -38,10 +25,9 @@
   </div>
 </header>
 
-<!-- PRODUCT CONTENT -->
 <div class="container product-page">
   <div class="product-image">
-    <img src="warm_jacket.png" alt="Разминочный костюм">
+    <img src="images/light_jacket.png" alt="Разминочный костюм">
   </div>
   <div class="product-details">
     <h1>Разминочный костюм</h1>
@@ -91,23 +77,18 @@
   </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const photos = document.querySelectorAll(".bg-photo");
-  photos.forEach(photo => {
-    // случайные проценты для top и left
-    const top = Math.random() * 80;   // от 0 до 80% высоты
-    const left = Math.random() * 80;  // от 0 до 80% ширины
-    const rotate = (Math.random() * 40) - 20; // от -20 до 20 градусов
+<!-- Галерея фото внизу -->
+<div class="container photo-gallery">
+  <h2>Фотографии с мероприятий</h2>
+  <div class="gallery-grid">
+    <img src="poxod1.jpeg" alt="Фото 1">
+    <img src="poxod2.jpeg" alt="Фото 2">
+    <img src="sochi1.jpg" alt="Фото 3">
+    <img src="sochi2.jpg" alt="Фото 4">
+    <img src="sochi3.jpg" alt="Фото 5">
+  </div>
+</div>
 
-    photo.style.top = top + "%";
-    photo.style.left = left + "%";
-    photo.style.transform = `rotate(${rotate}deg)`;
-  });
-});
-</script>
-  
-  
 <script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
