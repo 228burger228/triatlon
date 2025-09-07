@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Спортивная школа триатлона</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Спортивная школа триатлона</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
 </head>
 <body>
-
-  <!-- NAVIGATION -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">Главная</a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Главная</a>
-        <a href="#news">Новости</a>
-        <a href="coaches.html">Тренеры</a>
-        <a href="#gallery">Галерея</a>
-        <a href="shop.html">Экипировка</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle">
+      <div class="nav-toggle" id="navToggle">
         <i class="fas fa-bars"></i>
-      </button>
     </div>
-  </header>
-
-  <!-- профиль
-  <div class="profile-notification">
-    <button class="notification-btn" type="button">
-      <i class="fas fa-bell"></i>
+   <!-- NAVIGATION -->
+  <header class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">Главная</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Главная</a>
+      <a href="#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="#gallery">Галерея</a>
+      <a href="shop.html">Экипировка</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
     </button>
-    <div class="profile">
-      <div class="profile-avatar">
-        <img src="https://photosota.club/uploads/posts/2023-07/thumbs/1688566085_photosota-club-p-triatlon-simvolika-1.jpg" alt="Аватар">
-      </div>
-      <div class="profile-menu">
-        <a href="profile.html">Мой профиль</a>
-        <a href="#settings">Настройки</a>
-        <a href="#logout">Выйти</a>
-      </div>
-    </div>
-  </div> -->
+  </div>
+</header>
+
+<!-- профиль -->
+<div class="profile-notification">
+                    <button class="notification-btn" type="button">
+                        <i class="fas fa-bell"></i>
+                    </button>
+
+                    <div class="profile">
+                        <div class="profile-avatar">
+                            <img src="https://photosota.club/uploads/posts/2023-07/thumbs/1688566085_photosota-club-p-triatlon-simvolika-1.jpg" alt="Аватар">
+                        </div>
+                        <div class="profile-menu">
+                            <a href="profile.html">Мой профиль</a>
+                            <a href="#settings">Настройки</a>
+                            <a href="#logout">Выйти</a>
+                        </div>
+                    </div>
 
   <!-- HERO SECTION -->
   <section id="home" class="hero">
@@ -142,86 +145,109 @@
       </a>
     </div>
   </section>
+      <!-- ===== Telegram Новости ===== -->
+<section id="telegram" class="section telegram">
+  <h2 class="section-title">Новости из Telegram</h2>
+  <div class="telegram-wrapper">
+    <button class="tg-btn" onclick="switchPost(-1)">← Назад</button>
+    <div id="telegram-post-frame" class="telegram-frame"></div>
+    <button class="tg-btn" onclick="switchPost(1)">Вперёд →</button>
+  </div>
+</section>
 
-  <!-- ===== Telegram Новости ===== -->
-  <section id="telegram" class="section telegram">
-    <h2 class="section-title">Новости из Telegram</h2>
-    <div class="telegram-wrapper">
-      <button class="tg-btn" onclick="switchPost(-1)">← Назад</button>
-      <div id="telegram-post-frame" class="telegram-frame"></div>
-      <button class="tg-btn" onclick="switchPost(1)">Вперёд →</button>
-    </div>
-  </section>
 
-  <!-- контакты -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2 class="section-title">Контакты</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Менеджер</h3>
-          <p>Имя менеджера: <strong>Иван Иванов</strong></p>
-          <p>Телефон: <a href="tel:+7">+7 ### ###-##-##</a></p>
-          <p>Email: <a href="@email.com">почта</a></p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">💬</div>
-          <h3>Telegram-канал</h3>
-          <p>Следите за новостями и обновлениями</p>
-          <a href="https://t.me/dussh_aquatics" target="_blank" class="contact-link">t.me/dussh_aquatics</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">📝</div>
-          <h3>Запись / Обратная связь</h3>
-          <p><a href="ФОРМА" target="_blank" class="form-link">Перейти к форме</a></p>
-        </div>
+<!-- контакты -->
+<<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title">Контакты</h2>
+    <div class="contact-grid">
+      <!-- Менеджер -->
+      <div class="contact-card">
+        <h3>Менеджер</h3>
+        <p>Имя менеджера: <strong>Иван Иванов</strong></p>
+        <p>Телефон: <a href="tel:+7">+7 ### ###-##-##</a></p>
+        <p>Email: <a href="почта@email.com">почта</a></p>
+      </div>
+
+      <!-- Telegram канал -->
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h3>Telegram-канал</h3>
+        <p>Следите за новостями и обновлениями</p>
+        <a href="https://t.me/dussh_aquatics" target="_blank" class="contact-link">t.me/dussh_aquatics</a>
+      </div>
+
+      <!-- Google Форма -->
+      <div class="contact-card">
+        <div class="contact-icon">📝</div>
+        <h3>Запись / Обратная связь</h3>
+         <p><a href="ФОРМА" target="_blank" class="form-link">Перейти к форме</a></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Скрипт для Telegram -->
-  <script>https:
-    const telegramPosts = ["dussh_aquatics/1419","dussh_aquatics/1421","dussh_aquatics/1420","dussh_aquatics/1417","dussh_aquatics/1391"];
-    let currentIndex = 0;
-    let autoScrollInterval;
 
-    function renderTelegramPost(index) {
-      const container = document.getElementById("telegram-post-frame");
-      container.innerHTML = "";
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://t.me/js/telegram-widget.js";
-      script.setAttribute("data-telegram-post", telegramPosts[index]);
-      script.setAttribute("data-width", "100%");
-      script.setAttribute("data-userpic", "true");
-      script.setAttribute("data-dark", "false");
-      container.appendChild(script);
+
+    
+</body>
+    <script>
+     <<script>
+  const telegramPosts = [
+    "dussh_aquatics/1419",
+    "dussh_aquatics/1420",
+    "dussh_aquatics/1420", 
+    "dussh_aquatics/1417",
+    "/dussh_aquatics/1391"
+    "dussh_aquatics/1391"  // Убрал лишний слеш
+  ];
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  function renderTelegramPost(index) {
+    const container = document.getElementById("telegram-post-frame");
+    
+    // Полная очистка контейнера
+    container.innerHTML = "";
+    
+    // Создаем скрипт с правильным URL
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://t.me/dussh_aquatics";
+    script.src = "https://t.me/js/telegram-widget.js";  // Правильный URL
+    script.setAttribute("data-telegram-post", telegramPosts[index]);
+    script.setAttribute("data-width", "100%");
+    script.setAttribute("data-userpic", "true");
+    script.setAttribute("data-dark", "false");
+    
+    container.appendChild(script);
+  }
+
+@@ -229,53 +232,59 @@
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Проверяем существование контейнера
+    const frame = document.getElementById("telegram-post-frame");
+    if (!frame) {
+      console.error("Контейнер telegram-post-frame не найден");
+      return;
     }
 
-    function switchPost(direction = 1) {
-      currentIndex = (currentIndex + direction + telegramPosts.length) % telegramPosts.length;
-      renderTelegramPost(currentIndex);
-    }
+    renderTelegramPost(currentIndex);
+    startAutoScroll();
 
-    function startAutoScroll() {
-      autoScrollInterval = setInterval(() => switchPost(1), 10000);
-    }
+    // При наведении на виджет — останавливаем автопрокрутку, когда убрали — возобновляем
+    const frame = document.getElementById("telegram-post-frame");
+    // При наведении на виджет — останавливаем автопрокрутку
+    frame.addEventListener("mouseenter", stopAutoScroll);
+    frame.addEventListener("mouseleave", startAutoScroll);
+  });
+</script>
 
-    function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
-    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const frame = document.getElementById("telegram-post-frame");
-      if (!frame) return;
-      renderTelegramPost(currentIndex);
-      startAutoScroll();
-      frame.addEventListener("mouseenter", stopAutoScroll);
-      frame.addEventListener("mouseleave", startAutoScroll);
-    });
-  </script>
 
-  <!-- Скрипт для меню -->
+<!-- Скрипт для меню -->
   <script>
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -263,5 +289,6 @@
       });
     });
   </script>
+
 </body>
 </html>
