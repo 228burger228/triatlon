@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея</title>
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Навигация -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Главная</a>
+      <nav class="nav-links">
+        <a href="index.html#home">Главная</a>
+        <a href="index.html#news">Новости</a>
+        <a href="coaches.html">Тренеры</a>
+        <a href="gallery.html" class="active">Галерея</a>
+        <a href="shop.html">Экипировка</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Галерея -->
+  <main class="gallery-page">
+    <div class="container">
+      <h1 class="section-title">Галерея</h1>
+
+      <!-- Тренировки по районам -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Тренировки</h2>
+
+        <h3 class="gallery-subsubtitle">🏊 Марьино</h3>
+        <div class="gallery-grid">
+          <img src="gallery/marino1.jpg" alt="Марьино тренировка 1">
+          <img src="gallery/marino2.jpg" alt="Марьино тренировка 2">
+        </div>
+
+        <h3 class="gallery-subsubtitle">🚴 Крылатское</h3>
+        <div class="gallery-grid">
+          <img src="gallery/kryl1.jpg" alt="Крылатское тренировка 1">
+          <img src="gallery/kryl2.jpg" alt="Крылатское тренировка 2">
+        </div>
+
+        <h3 class="gallery-subsubtitle">🏃 Медведково</h3>
+        <div class="gallery-grid">
+          <img src="gallery/medved1.jpg" alt="Медведково тренировка 1">
+          <img src="gallery/medved2.jpg" alt="Медведково тренировка 2">
+        </div>
+      </section>
+
+      <!-- Сборы -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Сборы</h2>
+        <div class="gallery-grid">
+          <img src="gallery/camp1.jpg" alt="Сбор 1">
+          <img src="gallery/camp2.jpg" alt="Сбор 2">
+          <img src="gallery/camp3.jpg" alt="Сбор 3">
+        </div>
+      </section>
+
+      <!-- Походы -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Походы</h2>
+        <div class="gallery-grid">
+          <img src="gallery/hike1.jpg" alt="Поход 1">
+          <img src="gallery/hike2.jpg" alt="Поход 2">
+          <img src="gallery/hike3.jpg" alt="Поход 3">
+        </div>
+      </section>
+
+      <!-- Соревнования -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Соревнования</h2>
+        <div class="gallery-grid">
+          <img src="gallery/competition1.jpg" alt="Соревнование 1">
+          <img src="gallery/competition2.jpg" alt="Соревнование 2">
+          <img src="gallery/competition3.jpg" alt="Соревнование 3">
+        </div>
+      </section>
+
+      <!-- Награды -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Награды</h2>
+        <div class="gallery-grid">
+          <img src="gallery/award1.jpg" alt="Награда 1">
+          <img src="gallery/award2.jpg" alt="Награда 2">
+        </div>
+      </section>
+
+      <!-- Мероприятия -->
+      <section class="gallery-section">
+        <h2 class="gallery-subtitle">Мероприятия</h2>
+        <div class="gallery-grid">
+          <img src="gallery/event1.jpg" alt="Мероприятие 1">
+          <img src="gallery/event2.jpg" alt="Мероприятие 2">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Спортивная школа триатлона. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.querySelector(".nav-links");
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
