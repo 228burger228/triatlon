@@ -10,53 +10,13 @@
 
 </head>
 <body>
-    
-    <!-- навигация с шопа -->
-<nav class="navbar">
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Главная</a>
-                <a href="index.html#news">Новости</a>
-                <a href="coaches.html">Тренеры</a>
-                <a href="gallery.html">Галерея</a>
-                <a href="shop.html" class="active">Экипировка</a>
-                <a href="index.html#contact">Контакты</a>
-                
-                <div class="profile-notification">
-                    <button class="notification-btn" type="button">
-                        <i class="fas fa-bell"></i>
-                    </button>
-                    
-                    <div class="profile">
-                        <div class="profile-avatar">
-                            <img src="https://photosota.club/uploads/posts/2023-07/thumbs/1688566085_photosota-club-p-triatlon-simvolika-1.jpg" alt="Аватар">
-                        </div>
-                        <div class="profile-menu">
-                            <a href="profile.html">Мой профиль</a>
-                            <a href="#settings">Настройки</a>
-                            <a href="#logout">Выйти</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Кнопка скрытия/показа навигации -->
-    <div class="nav-toggle" id="navToggle">
+      <div class="nav-toggle" id="navToggle">
         <i class="fas fa-bars"></i>
     </div>
-
-
-
-    
-    
-    <!-- === Навигация (2) 
-<header class="navbar">
+   <!-- NAVIGATION -->
+  <header class="navbar">
   <div class="container nav-inner">
     <a href="#home" class="brand">Главная</a>
-
-    <!-- Основное меню 
     <nav class="nav-links" id="navLinks">
       <a href="#home">Главная</a>
       <a href="#news">Новости</a>
@@ -64,16 +24,19 @@
       <a href="gallery.html">Галерея</a>
       <a href="shop.html">Экипировка</a>
       <a href="#contact">Контакты</a>
-    </nav>-->
-
-
-    <!-- ОДНА кнопка бургер 
-   <button class="nav-toggle" id="burger">
-      ☰
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
     </button>
   </div>
 
-</header>-->
+<!-- Кнопка бургер -->
+    <button class="nav-toggle" id="burger">
+      ☰
+    </button>
+
+      
+</header>
 
     
 <!-- Мобильное меню -->
@@ -314,79 +277,72 @@
   });
 </script>
 
-    
- <script>
-    // Функционал скрытия/показа навигации
-    const navToggle = document.getElementById('navToggle');
-    const navbar = document.querySelector('.navbar');
-    let isNavHidden = false;
 
-    navToggle.addEventListener('click', () => {
-        isNavHidden = !isNavHidden;
-        
-        if (isNavHidden) {
-            navbar.classList.add('hidden');
-            navToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
-        } else {
-            navbar.classList.remove('hidden');
-            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Меню бургер
+  const navToggleBtns = document.querySelectorAll('.nav-toggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
     });
+  });
 
-    // Автоматическое скрытие навигации при прокрутке вниз
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            navbar.classList.remove('hidden');
-            isNavHidden = false;
-            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !isNavHidden) {
-            navbar.classList.add('hidden');
-            isNavHidden = true;
-            navToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
-        } else if (currentScroll < lastScroll && isNavHidden) {
-            navbar.classList.remove('hidden');
-            isNavHidden = false;
-            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-        
-        lastScroll = currentScroll;
+  // Закрытие меню при клике на ссылку
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
     });
+  });
 
-    // Плавная прокрутка для якорных ссылок
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
+  // Подсветка активного пункта навигации
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  function highlightNav() {
+    const scrollPos = window.scrollY + 80; // смещение для фиксированной шапки
+    sections.forEach(sec => {
+      const id = sec.id;
+      if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.clientHeight) > scrollPos) {
+        navItems.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
         });
+      }
     });
+  }
+  window.addEventListener('scroll', highlightNav);
+  highlightNav();
 
-    // Плавная прокрутка якорей
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-            window.scrollTo({top: target.offsetTop - 70, behavior: 'smooth'});
-        }
+  // Анимация появления секций при скролле
+  const animSections = document.querySelectorAll('.section');
+  function animateSections() {
+    const scrollY = window.scrollY;
+    animSections.forEach(section => {
+      if (scrollY > (section.offsetTop - section.clientHeight / 2)) {
+        section.classList.add('active');
+      }
     });
+  }
+  window.addEventListener('scroll', animateSections);
+  animateSections();
 });
-    </script>
+</script>
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+</script>
 
 
 
@@ -395,15 +351,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     
 
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
