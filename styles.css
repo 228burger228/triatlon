@@ -230,9 +230,38 @@ body {
 
 /* показываем бургер только на телефоне */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #2B6CB0;
+    cursor: pointer;
+    z-index: 1000;
+  }
 }
+
 
 
 /* ====== Hero ====== */
@@ -554,5 +583,6 @@ footer {
   .hero h1 { font-size: 2rem; }
   .gallery-item img { height: 140px; }
 }
+
 
 
