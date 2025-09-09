@@ -10,10 +10,6 @@
 
 </head>
 <body>
-
-
-
-
     
     <!--  <div class="nav-toggle" id="navToggle">
         <i class="fas fa-bars"></i>
@@ -39,9 +35,8 @@
     <button class="nav-toggle" id="burger">
       ☰
     </button>
-
-      
 </header>-->
+    
     <!-- === Навигация (исправленная) === -->
 <header class="navbar">
   <div class="container nav-inner">
@@ -303,7 +298,14 @@
   });
 </script>
 
-
+    
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -377,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 </html>
+
 
 
 
