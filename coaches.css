@@ -132,6 +132,13 @@ body {
   gap: 20px;
 }
 
+/* На телефоне — одна колонка */
+@media (max-width: 768px) {
+  .coaches-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .coach-card {
   background: white;
   border-radius: 12px;
