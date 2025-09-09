@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Навигация -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Главная</a>
-                <a href="index.html#news">Новости</a>
-                <a href="coaches.html" class="active">Тренеры</a>
-                <a href="index.html#gallery">Галерея</a>
-                <a href="shop.html">Экипировка</a>
-                <a href="index.html#contact">Контакты</a>
-            </div>
-        </div>
+      <!-- Навигация -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Aquatics</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home">Главная</a>
+      <a href="index.html#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="gallery.html" class="active">Галерея</a>
+      <a href="shop.html">Экипировка</a>
+      <a href="index.html#contact">Контакты</a>
     </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
     <section class="coaches-section">
         <div class="container">
@@ -222,5 +226,13 @@
             });
         });
     </script>
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
+
