@@ -52,11 +52,20 @@
       <a href="#contact">Контакты</a>
     </nav>
 
+<nav class="nav-links" id="navLinks">
+  <a href="#home">Главная</a>
+  <a href="#news">Новости</a>
+  <a href="coaches.html">Тренеры</a>
+  <a href="gallery.html">Галерея</a>
+  <a href="shop.html">Экипировка</a>
+  <a href="#contact">Контакты</a>
+</nav>
     <!-- ОДНА кнопка бургер -->
-    <button class="nav-toggle" id="navToggle">
-      <i class="fas fa-bars"></i>
+   <button class="nav-toggle" id="burger">
+      ☰
     </button>
   </div>
+
 </header>
 
     
@@ -300,33 +309,25 @@
 
     
 <script>
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
-
-<script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Меню бургер
-  const navToggleBtns = document.querySelectorAll('.nav-toggle');
-  const navLinks = document.getElementById('navLinks');
+  const burger = document.getElementById('burger');      // кнопка бургер
+  const navLinks = document.getElementById('navLinks');  // меню
 
-  navToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+  // Открытие/закрытие меню
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show'); // добавляем/удаляем класс show
+    burger.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
   });
 
-  // Закрытие меню при клике на ссылку
+  // Закрытие меню при клике на пункт
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('show');
+      burger.textContent = '☰';
     });
   });
 
-  // Подсветка активного пункта навигации
+  // Подсветка активного пункта навигации при скролле
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-links a');
 
@@ -358,6 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animateSections();
 });
 </script>
+
 <script>
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -379,6 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 </html>
+
 
 
 
