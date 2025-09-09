@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты | Triathlon School</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Навигация -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Triathlon</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="news.html">Новости</a>
+        <a href="coaches.html">Тренеры</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="shop.html">Экипировка</a>
+        <a href="contacts.html" class="active">Контакты</a>
+      </nav>
+      <button class="nav-toggle" id="burger">☰</button>
+    </div>
+  </header>
+
+  <!-- Контент -->
+  <main class="container" style="margin-top:100px;">
+    <h1>Контактная информация</h1>
+ <!-- Google форма -->
+    <div class="google-form">
+      <iframe src="https://docs.google.com/forms/d/e/ВАШ_ID_ФОРМЫ/viewform?embedded=true">
+        Загрузка…
+      </iframe>
+    </div>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h3>Обратная связь</h3>
+        <p>Задайте вопрос, направьте пожелание или оставьте отзыв о нашей работе. Ответим в течение 24 часов.</p>
+        <a href=" info@aquatics-sport.com" class="contact-link">Написать сообщение</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Клиентская поддержка</h3>
+        <p>Мы принимаем звонки круглосуточно без выходных. Звонок бесплатный.</p>
+        <a href="tel:8 (915) 209-30-54" class="contact-link">8 (915) 209-30-54</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Адреса магазинов</h3>
+        <p>Перед поездкой в магазин уточните его адрес, время работы и схему проезда.</p>
+       <!-- <a href="" class="contact-link">Смотреть адреса</a> -->
+      </div>
+    </div>
+
+    <div class="contact-details">
+      <div>
+        <h3>Центральный офис</h3>
+        <p>129128, город Москва, пр-кт Мира, д.192</p>
+        <a href="tel:8 (915) 209-30-54" class="contact-link">8 (915) 209-30-54</a>
+      </div>
+
+      <div>
+        <h3>АНО «ДЮСШ «АКВАТИКС»</h3>
+        <p>ОГРН 1037700061410</p>
+        <p>129128, город Москва, пр-кт Мира, 192</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Спортивная школа триатлона , "Акватикс" . Все права защищены.</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
