@@ -1,0 +1,156 @@
+/* Основной стиль */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.navbar {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0;
+}
+
+.coach-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.coach-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.coach-card:hover {
+  transform: translateY(-5px);
+}
+
+.coach-photo {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.coach-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #007bff;
+  color: white;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.coach-info {
+  padding: 15px;
+}
+
+.coach-info h3 {
+  margin: 5px 0;
+  font-size: 1.3rem;
+}
+
+.coach-specialty {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.coach-experience {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #666;
+}
+
+.btn.coach-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn.coach-btn:hover {
+  background: #0056b3;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    padding: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
