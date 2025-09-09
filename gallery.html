@@ -9,20 +9,22 @@
 </head>
 <body>
   <!-- Навигация -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand">Главная</a>
-      <nav class="nav-links">
-        <a href="index.html#home">Главная</a>
-        <a href="index.html#news">Новости</a>
-        <a href="coaches.html">Тренеры</a>
-        <a href="gallery.html" class="active">Галерея</a>
-        <a href="shop.html">Экипировка</a>
-        <a href="index.html#contact">Контакты</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Aquatics</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home">Главная</a>
+      <a href="index.html#news">Новости</a>
+      <a href="coaches.html">Тренеры</a>
+      <a href="gallery.html" class="active">Галерея</a>
+      <a href="shop.html">Экипировка</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
   <!-- Галерея -->
   <main class="gallery-page">
@@ -109,11 +111,12 @@
   </footer>
 
   <script>
-    const navToggle = document.getElementById("navToggle");
-    const navLinks = document.querySelector(".nav-links");
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
